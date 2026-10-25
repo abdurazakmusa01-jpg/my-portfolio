@@ -1,0 +1,255 @@
+/* ===== 1. VARIABLES: save a color once, use it many times ===== */
+:root {
+  --purple: #6c63ff;
+  --pink: #ff6584;
+  --dark: #1f2040;
+  --light: #f5f6fa;
+}
+
+/* ===== 2. RESET: remove the default space the browser adds ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;   /* padding stays inside the width */
+}
+
+html {
+  scroll-behavior: smooth;  /* smooth scrolling for menu links */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--dark);
+  background: var(--light);
+}
+
+a {
+  text-decoration: none;    /* remove underline from links */
+}
+
+/* ===== 3. HEADER AND MENU (Flexbox) ===== */
+.header {
+  background: linear-gradient(135deg, var(--dark), var(--purple));
+  color: white;
+  min-height: 100vh;        /* 100vh = full screen height */
+}
+
+.menu {
+  display: flex;                    /* put logo and list in one row */
+  justify-content: space-between;   /* logo left, list right */
+  align-items: center;
+  padding: 16px 5%;
+  background: var(--dark);
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu ul {
+  display: flex;
+  gap: 20px;                /* space between menu items */
+  list-style: none;         /* remove bullets */
+}
+
+.menu ul a {
+  color: white;
+}
+
+.menu ul a:hover {          /* :hover = when the mouse is over it */
+  color: var(--pink);
+}
+
+/* ===== 4. HERO: centered welcome text ===== */
+.hero {
+  text-align: center;
+  padding: 150px 5%;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeUp 1s;     /* uses @keyframes fadeUp at the bottom */
+}
+
+.hero p {
+  margin-bottom: 25px;
+}
+
+/* ===== 5. BUTTON ===== */
+.button {
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;      /* big radius = pill shape */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;         /* smooth change */
+}
+
+.button:hover {
+  transform: translateY(-4px);   /* move up 4px */
+}
+
+/* ===== 6. SECTIONS ===== */
+.section {
+  padding: 70px 5%;
+  max-width: 1000px;
+  margin: 0 auto;           /* auto left/right = center the box */
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--purple);
+}
+
+.section h3 {
+  margin: 20px 0 10px;
+}
+
+.section ol {
+  padding-left: 25px;
+}
+
+mark {
+  background: #ffe66d;
+}
+
+/* Gray sections: the background is full width */
+.gray {
+  max-width: none;
+  background: white;
+}
+
+/* ===== 7. CARDS (CSS Grid) ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 equal columns */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--light);
+  padding: 25px;
+  text-align: center;
+  border-radius: 14px;
+  border-top: 5px solid var(--purple);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card progress {
+  width: 100%;
+}
+
+/* ===== 8. TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;   /* join borders into single lines */
+  background: white;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: var(--purple);
+  color: white;
+}
+
+tr:nth-child(even) {        /* every second row */
+  background: var(--light);
+}
+
+/* ===== 9. FORM ===== */
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form label {
+  display: block;
+  margin: 14px 0 4px;
+  font-weight: bold;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form input:focus,          /* :focus = when you click inside */
+.form select:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.form .button {
+  margin-top: 20px;
+}
+
+/* ===== 10. FOOTER ===== */
+.footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+/* ===== 11. ANIMATION ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 12. RESPONSIVE: phones (screen 700px or smaller) ===== */
+@media (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cards {
+    grid-template-columns: 1fr;   /* 1 column */
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+/* Round profile photo */
+.my-photo {
+  display: block;           /* lets us center it */
+  width: 180px;
+  height: 180px;
+  object-fit: cover;         /* crops the photo so it is not stretched */
+  border-radius: 50%;        /* 50% makes it a circle */
+  border: 5px solid var(--purple);
+  margin: 0 auto 25px;       /* auto left/right = centered */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: 0.6s;
+}
+
+.my-photo:hover {
+  transform: rotate(360deg); /* spins once when the mouse is over it */
+}

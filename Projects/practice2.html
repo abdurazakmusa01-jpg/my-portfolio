@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Information about the page (not shown on screen) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <!-- This line connects the CSS file to this HTML file -->
+  <link rel="stylesheet" href="./Practice2.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER: the top of the page ===== -->
+  <header class="header" id="top">
+    <!-- nav = the menu. href="#about" jumps to the element with id="about" -->
+    <nav class="menu">
+      <a href="#top" class="logo">Abdurezak</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- h1 = main heading. p = paragraph -->
+    <div class="hero">
+      <h1>Hi, I am Abdurezak</h1>
+      <p>Computer Science student at Haramaya University.</p>
+      <a href="#contact" class="button">Contact Me</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I am a <strong>Computer Science</strong> student.
+        I love <em>web design</em> and I like to
+        <mark>solve problems with code</mark>.
+      </p>
+      <!-- ul = list with bullets, ol = numbered list. li = one item -->
+      <h3>My Goals</h3>
+      <ol>
+        <li>Finish my degree</li>
+        <li>Build a full-stack project</li>
+        <li>Teach students in my community</li>
+      </ol>
+    </section>
+
+    <!-- ===== SKILLS SECTION (cards) ===== -->
+    <section id="skills" class="section gray">
+      <h2>My Skills</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>HTML</h3>
+          <!-- progress = a progress bar -->
+          <progress value="90" max="100"></progress>
+        </div>
+        <div class="card">
+          <h3>CSS</h3>
+          <progress value="80" max="100"></progress>
+        </div>
+        <div class="card">
+          <h3>JavaScript</h3>
+          <progress value="55" max="100"></progress>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COURSES SECTION (table) ===== -->
+    <section id="courses" class="section">
+      <h2>My Courses</h2>
+      <!-- table, tr = row, th = heading cell, td = normal cell -->
+      <table>
+        <tr>
+          <th>No.</th>
+          <th>Course</th>
+          <th>Credit Hours</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>DSA</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Web Programming</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Java Programming</td>
+          <td>3</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- ===== CONTACT SECTION (form) ===== -->
+    <section id="contact" class="section gray">
+      <h2>Contact Me</h2>
+
+    <img src="./images/me.jpg" alt="My Photo" class="my-photo">
+      <form class="form">
+        <!-- label "for" must match the input "id" -->
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+
+        <label for="topic">Topic</label>
+        <select id="topic">
+          <option>Project Help</option>
+          <option>Tutoring</option>
+          <option>Other</option>
+        </select>
+
+        <label for="msg">Message</label>
+        <textarea id="msg" rows="4" placeholder="Write your message"></textarea>
+
+        <button type="submit" class="button">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER: the bottom of the page ===== -->
+  <footer class="footer">
+    <p>&copy; 2026 Abdurezak. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
